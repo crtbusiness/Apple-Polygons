@@ -88,10 +88,16 @@ func makePolygons() -> [Polygon] {
 }
 
 let polygonArray = makePolygons()
-// This is giving an error, saying that makePolygons() isn't returning a Polygon. Gonna ask someone for help, cuz I don't get why it isn't working. I looked at others' stuff on github, and I don't see differences.
-func draw() -> [Polygon] {
+// Had an issue here, but the issue was resolved.
+
+func iterate() {
     for shape in polygonArray {
-        print ("\(shape.name) has \(shape.name) sides.Perimeter is \(shape.perimeter()). Area is \(shape.area()).")
+        draw(shape: shape)
     }
 }
-draw()
+
+func draw(shape: Polygon) {
+    print ("\(shape.name) has \(shape.sides) sides. Perimeter is \(shape.perimeter()). Area is \(shape.area()).")
+}
+
+iterate()
